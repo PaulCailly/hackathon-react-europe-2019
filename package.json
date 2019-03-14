@@ -17,6 +17,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@progress/kendo-react-buttons": "^2.7.1",
+    "@progress/kendo-react-dateinputs": "^2.7.1",
+    "@progress/kendo-react-dialogs": "^2.7.1",
+    "@progress/kendo-react-dropdowns": "^2.7.1",
+    "@progress/kendo-react-inputs": "^2.7.1",
+    "@progress/kendo-react-intl": "^2.7.1",
+    "@progress/kendo-react-layout": "^2.7.1",
     "axios": "^0.18.0",
     "immer": "^1.12.1",
     "normalize.css": "^8.0.1",
