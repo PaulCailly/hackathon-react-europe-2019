@@ -1,0 +1,73 @@
+body {
+  background-color: #1B2634;
+}
+
+p, h1, h2, h3 {
+  color: #efefef;
+}
+
+/* App Flexbox Conatiner and Items */
+.app-container {
+  font-family: 'Lato', sans-serif;
+  color:rgb(33, 37, 41);
+  display: flex;
+}
+.view { width: 100%; }
+
+/* How can we clean this up more */
+.sidenav, .sidenav.show {
+  min-width: 150px;
+  height: 100vh;
+  background-color: #ddd;
+}
+.sidenav.hide { display: none; }
+
+.view {
+  display: flex;
+  flex-direction: column;
+}
+main { padding: 1em; }
+
+/* Top Navigation */
+header {
+  display: flex;
+  padding: 1em;
+  background: rgba(255, 255, 255, 0.85);
+  color: rgb(33, 37, 41);
+  border-bottom: 1px solid rgb(82, 99, 121); /* #526379 */
+  font-size: 18px;
+  height: 1em;
+}
+.logo { width: 30%; }
+
+/* Utility Styles */
+button {
+  cursor: pointer;
+  margin-right: 0.25em;
+  padding: 0.625em;
+  border: none;
+  border-radius: 4px;
+  background-color: rgba(83, 210, 250, 0.9); /* #53d2fa */
+  color: rgb(8, 44, 54);
+}
+button:hover {
+  background-color: rgba(83, 210, 250, 0.5); /* #53d2fa */
+  color: rgb(8, 44, 54); /* #082c36 */
+}
+.hoverable {
+  cursor: pointer; cursor: hand;
+  -webkit-transition: opacity 0.15s ease-in-out;
+  -moz-transition: opacity 0.15s ease-in-out;
+  -ms-transition: opacity 0.15s ease-in-out;
+  -o-transition: opacity 0.15s ease-in-out;
+  transition: opacity 0.15s ease-in-out;
+  opacity: 1;
+}
+.hoverable:hover {
+  -webkit-transition: opacity 0.15s ease-in-out;
+  -moz-transition: opacity 0.15s ease-in-out;
+  -ms-transition: opacity 0.15s ease-in-out;
+  -o-transition: opacity 0.15s ease-in-out;
+  transition: opacity 0.15s ease-in-out;
+  opacity: 0.5;
+}
