@@ -1,0 +1,108 @@
+body {
+  background-color: #1B2634;
+}
+p, h1, h2, h3 {
+  color: #222;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100vh;
+}
+
+body {
+  font: 500 .9rem/1 'Avenir Next', sans-serif;
+  color: #333;
+  background: rgb(45,48,58);
+}
+
+/* Flex For Sidebar and Content Area */
+.wrapper {
+  display: flex;
+  min-height: 100%;
+}
+
+.wrapper aside {
+  position: absolute;
+  width: 150px;
+}
+.wrapper main {
+  flex: 1;
+  height: 100vh;
+  background: #fff;
+  box-shadow: 0 0 5px #000;
+  transform: translateX(0);
+  transition: transform .3s;
+}
+.wrapper.sm.closed main {
+  transform: translateX(0px);
+}
+.wrapper.md.closed main {
+  transform: translateX(0px);
+}
+.wrapper.sm.open main {
+  transform: translateX(150px);
+}
+.wrapper.md.open main {
+  transform: translateX(0px);
+}
+
+main {
+  flex-direction: column;
+}
+main header {
+  display: flex;
+  flex-direction: row;
+  padding: 1em;
+}
+main section {
+  color: #222;
+  padding: 1em;
+}
+
+main header {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.wrapper.sm > main > header > .topnav > ul > li.menu {
+  display: auto;
+}
+.wrapper.md > main > header > .topnav > ul > li.menu {
+  display: none;
+}
+
+.wrapper.sm > main > header > .topnav > ul > li.link {
+  display: none;
+}
+.wrapper.md > main > header > .topnav > ul > li.link {
+  display: auto;
+}
+
+
+
+
+/* Utility Classes */
+.hoverable {
+  cursor: pointer; cursor: hand;
+  -webkit-transition: opacity 0.15s ease-in-out;
+  -moz-transition: opacity 0.15s ease-in-out;
+  -ms-transition: opacity 0.15s ease-in-out;
+  -o-transition: opacity 0.15s ease-in-out;
+  transition: opacity 0.15s ease-in-out;
+  opacity: 1;
+}
+.hoverable:hover {
+  -webkit-transition: opacity 0.15s ease-in-out;
+  -moz-transition: opacity 0.15s ease-in-out;
+  -ms-transition: opacity 0.15s ease-in-out;
+  -o-transition: opacity 0.15s ease-in-out;
+  transition: opacity 0.15s ease-in-out;
+  opacity: 0.5;
+}

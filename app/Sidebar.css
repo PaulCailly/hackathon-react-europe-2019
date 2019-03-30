@@ -1,0 +1,34 @@
+aside ul {
+    display: flex;
+    flex-direction: column;
+  
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 0;
+  }
+  aside li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  
+    /* list-style-type: none; */
+    min-height: 45px;
+    background-color: #efefef;
+    border-bottom: 1px solid #ccc;
+  }
+  aside li > a {
+    margin-left: 1em;
+  }
+  aside li:first-child {
+    display: none;
+  }
+  
+  .active {
+    font-weight: bold;
+  }
+  
+  /* .app-container.small aside { display: auto; }
+  .app-container.medium aside { display: none; } */
+  

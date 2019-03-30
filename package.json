@@ -37,6 +37,8 @@
     "react-dom": "^16.8.4",
     "react-media-hook": "^0.3.0",
     "react-router-dom": "^4.3.1",
+    "react-use": "^7.1.0",
+    "react-use-media": "^0.3.0",
     "url-loader": "^1.1.2"
   },
   "devDependencies": {

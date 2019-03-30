@@ -1,7 +1,6 @@
 import React from 'react';
-import './Topnav.css';
-
 import Menu from './Menu';
+import './Topnav.css';
 
 const TopNav = () => {
   return (
