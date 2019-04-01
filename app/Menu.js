@@ -9,12 +9,12 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 library.add(faBars, faTimes)
 
 const Menu = () => {
-  const context = useContext(AppContext);
+  const ctx = useContext(AppContext);
   return (
     <ul>
       <li className="menu">
-        <FontAwesomeIcon icon={`${context.navOpen ? 'times' : 'bars'}`} className="hoverable" onClick={() => {
-          context.toggleSidenav(!context.navOpen)
+        <FontAwesomeIcon icon={`${ctx.navOpen ? 'times' : 'bars'}`} className="hoverable" onClick={() => {
+          ctx.toggleSidenav(!ctx.navOpen)
         }} />
       </li>
       <li className="link"><NavLink exact activeClassName="active" to="/">Home</NavLink></li>

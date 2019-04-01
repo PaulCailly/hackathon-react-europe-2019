@@ -4,6 +4,7 @@ const AppContext = createContext();
 
 const AppProvider = (props) => {
   const appData = {
+    navCloseMd: true,
     navOpen: false,
     toggleSidenav: (value) => {
       setApp(appData => ({ ...appData, navOpen: value }))
@@ -12,8 +13,8 @@ const AppProvider = (props) => {
   const [app, setApp] = useState(appData);
 
   {/* 
-    This is a component, it returns JSX, uses props.children 
-    to give access to child components 
+    This component returns JSX, uses props.children 
+    to give access to dat in child components 
   */}
   
   return (

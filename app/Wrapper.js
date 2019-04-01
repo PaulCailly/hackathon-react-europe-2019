@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useMedia } from 'react-use-media';
 
 import Sidebar from './Sidebar';
@@ -8,19 +8,19 @@ import Content from './Content';
 import { AppContext } from "./AppContext";
 
 const Wrapper = () => {
-  // We add the check for MediumPlus at the App level and we append it to the class: `app-conainter`
-  const isMediumPlus = useMedia("(min-width: 600px)") ? true : false;
-  const context = useContext(AppContext);
+  const isMd = useMedia("(min-width: 600px)") ? true : false;
+  const ctx = useContext(AppContext);
+  const wrapperCSS = `wrapper ${isMd ? 'md' : 'sm'} ${ctx.navOpen ? 'open' : 'closed'}`;
+
+  useEffect(() => {
+    let setNavClose = isMd && ctx.navCloseMd && ctx.navOpen;
+    if (setNavClose) { ctx.toggleSidenav(false); }
+  });
 
   return (
-    <div className={`wrapper 
-      ${isMediumPlus  ? 'md' : 'sm'} 
-      ${context.navOpen ? 'open' : 'closed'}`
-    }>
-
+    <div className={wrapperCSS}>
       <Sidebar />
       <Content />
-
     </div>
   )
 }
