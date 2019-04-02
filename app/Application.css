@@ -24,7 +24,7 @@ body {
 /* Flex For Sidebar and Content Area */
 .wrapper {
   display: flex;
-  min-height: 100%;
+  overflow-x: hidden;
 }
 
 .wrapper aside {
@@ -33,7 +33,7 @@ body {
 }
 .wrapper main {
   flex: 1;
-  height: 100vh;
+  min-height: 100vh; /* so main always takes up at least the view height */
   background: #fff;
   box-shadow: 0 0 5px #000;
   transform: translateX(0);
@@ -56,6 +56,7 @@ main {
   flex-direction: column;
 }
 main header {
+  height: 50px;
   display: flex;
   flex-direction: row;
   padding: 1em;
@@ -65,30 +66,72 @@ main section {
   padding: 1em;
 }
 
-main header {
-  display: flex;
-  flex-direction: row;
+.wrapper.sm .topnav li.menu { display: auto; }
+.wrapper.md .topnav li.menu { display: none; }
+
+.wrapper.sm .topnav li.link { display: none; }
+.wrapper.md .topnav li.link { display: auto; }
+
+/* Utility Styles */
+.main-content {
+  font-family: inherit;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-
-.wrapper.sm > main > header > .topnav > ul > li.menu {
-  display: auto;
+/* What we normally do */
+.main-content h2 {
+  font-size: 2em;
+  font-weight: 500;
+  line-height: 1;
+  color: inherit;
 }
-.wrapper.md > main > header > .topnav > ul > li.menu {
-  display: none;
+/* What we do at medium and up */
+@media (min-width: 600px) {
+  .main-content h2 {
+    font-size: 3em;
+    font-weight: 400;
+    line-height: 1.2;
+  }
 }
 
-.wrapper.sm > main > header > .topnav > ul > li.link {
-  display: none;
+h3.title {
+  font-size: 2.5em;
+  font-weight: 400;
+  display: inline-block;
+  padding-bottom: 5px;
+  position: relative;
+  margin-bottom: 1em;
 }
-.wrapper.md > main > header > .topnav > ul > li.link {
-  display: auto;
+h3.title:before{
+  content: "";
+  position: absolute;
+  left: 35%; width: 30%;
+  bottom: -0.5em; height: 2px;
+  border-bottom: 2px solid #ea0058;
 }
 
+.text-center {
+  text-align: center !important;
+}
 
+button {
+  cursor: pointer;
+  margin-right: 0.25em;
+  padding: 0.625em;
+  border: none;
+  border-radius: 4px;
+  background-color: rgba(83, 210, 250, 0.9); /* #53d2fa */
+  color: rgb(8, 44, 54);
+}
+button:hover {
+  background-color: rgba(83, 210, 250, 0.5); /* #53d2fa */
+  color: rgb(8, 44, 54); /* #082c36 */
+}
 
-
-/* Utility Classes */
 .hoverable {
   cursor: pointer; cursor: hand;
   -webkit-transition: opacity 0.15s ease-in-out;
