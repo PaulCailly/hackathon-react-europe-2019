@@ -1,7 +1,9 @@
 body {
-  background-color: #1B2634;
+  font: 500 .9rem/1 'Avenir Next', sans-serif;
+  color: #333;
+  background: rgb(255,255,255);
 }
-p, h1, h2, h3 {
+p, span, h1, h2, h3, h4, h5, h6 {
   color: #222;
 }
 
@@ -13,12 +15,6 @@ p, h1, h2, h3 {
 
 html, body {
   height: 100vh;
-}
-
-body {
-  font: 500 .9rem/1 'Avenir Next', sans-serif;
-  color: #333;
-  background: rgb(45,48,58);
 }
 
 /* Flex For Sidebar and Content Area */
@@ -39,29 +35,27 @@ body {
   transform: translateX(0);
   transition: transform .3s;
 }
-.wrapper.sm.closed main {
-  transform: translateX(0px);
-}
-.wrapper.md.closed main {
+.wrapper.sm.closed main, 
+.wrapper.md.closed main, 
+.wrapper.md.open main {
   transform: translateX(0px);
 }
 .wrapper.sm.open main {
   transform: translateX(150px);
-}
-.wrapper.md.open main {
-  transform: translateX(0px);
 }
 
 main {
   flex-direction: column;
 }
 main header {
+  background-color: #FFF;
   height: 50px;
   display: flex;
   flex-direction: row;
   padding: 1em;
 }
 main section {
+  background-color: #F8F9FA;
   color: #222;
   padding: 1em;
 }
@@ -104,12 +98,12 @@ h3.title {
   display: inline-block;
   padding-bottom: 5px;
   position: relative;
-  margin-bottom: 1em;
+  margin-bottom: 1.25em;
 }
 h3.title:before{
   content: "";
   position: absolute;
-  left: 35%; width: 30%;
+  left: 40%; width: 20%;
   bottom: -0.5em; height: 2px;
   border-bottom: 2px solid #ea0058;
 }

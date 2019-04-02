@@ -15,9 +15,7 @@ const Application = () => {
   return (
     <AppProvider>
       <BrowserRouter>
-
         <Wrapper />
-      
       </BrowserRouter>
     </AppProvider>
   )

@@ -14,7 +14,7 @@ const MasonryLayout = props => {
   for (let i = 0; i < props.children.length; i++) {
     const columnIndex = i % props.columns;
     columnWrapper[`column${columnIndex}`].push(
-      <div style={{ marginBottom: `${props.gap}px`, backgroundColor: '#efefef' }}>
+      <div style={{ marginBottom: `${props.gap}px`, backgroundColor: '#fff' }}>
         {props.children[i]}
       </div>
     );
@@ -52,4 +52,6 @@ export default MasonryLayout;
 /*
   More information on this masonry layout component for React can be found here:
   https://medium.com/the-andela-way/how-to-create-a-masonry-layout-component-using-react-f30ec9ca5e99
+  https://codepen.io/john555/pen/GYoyNd and https://masonry.desandro.com/layout.html
+  as well https://imagesloaded.desandro.com/#webpack if we add images
 */
