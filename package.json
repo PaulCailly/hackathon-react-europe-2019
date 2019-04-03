@@ -31,6 +31,7 @@
     "@progress/kendo-react-intl": "^2.8.0",
     "@progress/kendo-react-layout": "^2.8.0",
     "axios": "^0.18.0",
+    "bootstrap-4-grid": "^2.4.1",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",

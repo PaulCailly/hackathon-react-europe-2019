@@ -4,7 +4,7 @@ import { useMedia } from 'react-use-media';
 
 const Destinations = () => {
   document.title = `TripXpert Destinations`;
-  const isMd = useMedia("(min-width: 600px)") ? true : false;
+  const isMd = useMedia("(min-width: 768px)") ? true : false;
 
   return (
     <div className="main-content">

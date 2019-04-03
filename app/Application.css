@@ -84,7 +84,7 @@ main section {
   color: inherit;
 }
 /* What we do at medium and up */
-@media (min-width: 600px) {
+@media (min-width: 768px) {
   .main-content h2 {
     font-size: 3em;
     font-weight: 400;
@@ -108,9 +108,9 @@ h3.title:before{
   border-bottom: 2px solid #ea0058;
 }
 
-.text-center {
-  text-align: center !important;
-}
+.text-center { text-align: center; }
+.text-muted { color: #677480; }
+.text-italic { font-style: italic; }
 
 button {
   cursor: pointer;

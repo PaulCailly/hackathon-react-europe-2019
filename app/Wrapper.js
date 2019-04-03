@@ -7,8 +7,11 @@ import Content from './Content';
 /* We need data from our context at this layer so that we can toggle the sidenav */
 import { AppContext } from "./AppContext";
 
+/* Application Wide Styles */
+import 'bootstrap-4-grid/css/grid.min.css';
+
 const Wrapper = () => {
-  const isMd = useMedia("(min-width: 600px)") ? true : false;
+  const isMd = useMedia("(min-width: 768px)") ? true : false;
   const ctx = useContext(AppContext);
   const wrapperCSS = `wrapper ${isMd ? 'md' : 'sm'} ${ctx.navOpen ? 'open' : 'closed'}`;
 
