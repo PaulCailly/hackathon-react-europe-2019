@@ -67,6 +67,9 @@ main section {
 /* Home Header flex containted in the center */
 .home-header-container {
   background-image: url(images/app/homepage-image.jpg);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;           /* establish flex container */
   flex-direction: column;  /* make main axis vertical */
   justify-content: center; /* center items vertically, in this case */
@@ -89,8 +92,6 @@ main section {
 .masonry-grid {
   margin: 2em;
 }
-
-
 
 /* Utility Styles */
 h1 {
