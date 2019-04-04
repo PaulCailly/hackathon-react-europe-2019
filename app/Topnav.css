@@ -14,9 +14,35 @@
   margin-left: 2em;
   margin-right: 2em;
 }
-.topnav ul li { list-style-type: none; }
+.topnav ul li {
+  height: 78px;
+  display: flex;
+  flex-direction: column;  /* make main axis vertical */
+  justify-content: center; /* center items vertically, in this case */
+}
+
+/* If right side nav, menu won't have right margin */
 .topnav ul > li:not(:last-child) { margin-right: 15px; }
-.topnav ul > li a { color: rgb(33, 37, 41); }
+
+.topnav ul > li a {
+  color: rgba(33, 37, 41, 0.8);
+  text-decoration: none;
+  font-weight: 400;
+  height: 78px;
+  display: flex;
+  flex-direction: column;  /* make main axis vertical */
+  justify-content: center;
+}
+.topnav ul > li a:hover {
+  color: #ea0058;
+}
+.topnav ul > li a.active {
+  color: #ea0058;
+  border-bottom: solid 3px #ea0058;
+  margin-top: 3px;
+  margin-bottom: 1px;
+}
+
 
 .app-container.small .topnav ul > li.link { display: none; }
 .app-container.medium .topnav ul > li.link { display: auto; }
