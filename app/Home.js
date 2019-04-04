@@ -44,8 +44,7 @@ const Home = () => {
       <div className="masonry-grid">
         <MasonryLayout columns={isMd ? 3 : 2} gap={isMd ? 32 : 24}>
           {[...Array(6).keys()].map(
-            (key, idx) =>
-              <div alt={`${key} ${idx}`} style={{ height: `200px` }} />
+            (key) => <div key={`${key}`} style={{height: `200px`}} />
           )}
         </MasonryLayout>
       </div>
