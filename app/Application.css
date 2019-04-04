@@ -86,6 +86,20 @@ main section {
   margin-bottom: 0.25em;
 }
 
+.tx-search-sm span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 0.75rem;
+  background-color: #fff;
+  color: #495057;
+  height: 56px;
+  width: 100%;
+  border-radius: 0;
+  border-width: 0;
+}
+
 /* swap between basic and advanced search */
 .wrapper.sm .tx-search-sm { display: auto; }
 .wrapper.md .tx-search-sm { display: none; }

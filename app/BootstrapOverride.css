@@ -31,3 +31,21 @@
   background-color: #C4004A;
   border-color: #C4004A;
 }
+
+.k-autocomplete .k-clear-value, .k-dropdown-wrap .k-clear-value, .k-multiselect-wrap .k-clear-value {
+  height: 1.5rem;
+  line-height: 1.5rem;
+  outline: 0;
+  cursor: pointer;
+  display: none;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  opacity: .5;
+  position: absolute;
+  top: 15px;
+  right: 6.5px;
+}

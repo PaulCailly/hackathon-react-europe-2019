@@ -9,7 +9,7 @@ import { Button } from '@progress/kendo-react-buttons';
 const Home = () => {
   document.title = `TripXpert Home`;
   const isMd = useMedia("(min-width: 768px)") ? true : false;
-  const offerOptions = [ "All Types", "Special Offers", "Regular Offers" ];
+  const offerOptions = [ "All", "Special", "Regular" ];
   const priceOptions = [ "$0 to $999", "$1000 to $1999", "$2000 to $2999" ];
   const destinations = [ "Barcelona", "United States", "Malta", "Italy" ];
 
@@ -21,7 +21,7 @@ const Home = () => {
           <h1>Find the best destinations all around the world</h1>
 
           <div className="tx-search-sm">
-            <h2>search box only</h2>
+            <span>Find your destination</span>
           </div>
 
           <div className="tx-search-md">
