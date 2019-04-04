@@ -80,6 +80,10 @@ main section {
 .header-centered {
   width: 70%;
   color: #fff;
+  margin-top: -4.5em;
+}
+.header-centered h1 {
+  margin-bottom: 0.25em;
 }
 
 /* swap between basic and advanced search */

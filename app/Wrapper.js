@@ -9,6 +9,8 @@ import { AppContext } from "./AppContext";
 
 /* Application Wide Styles */
 import 'bootstrap-4-grid/css/grid.min.css';
+import '@progress/kendo-theme-bootstrap/dist/all.css';
+import './BootstrapOverride.css';
 
 const Wrapper = () => {
   const isMd = useMedia("(min-width: 768px)") ? true : false;
