@@ -10,6 +10,7 @@ aside ul {
   }
   aside li {
     display: flex;
+    flex-direction: row;
     justify-content: flex-start;
     align-items: center;
   
@@ -19,15 +20,29 @@ aside ul {
     border-bottom: 1px solid #ccc;
   }
   aside li > a {
-    margin-left: 1em;
+    padding-left: 1em;
+    color: rgba(33, 37, 41, 0.8);
+    text-decoration: none;
+    font-weight: 400;
+    width: 100%;
+    height: 45px;
+    display: flex;
+    flex-direction: column;  /* make main axis vertical */
+    justify-content: center;
+  }
+  aside li > a:hover {
+    color: #ea0058;
+  }
+  aside li > a.active {
+    color: #ea0058;
+    border-bottom: solid 3px #ea0058;
+    margin-top: 2px;
+    margin-bottom: -2px;
   }
   aside li:first-child {
     display: none;
   }
-  
-  .active {
-    font-weight: bold;
-  }
+
   
   /* .app-container.small aside { display: auto; }
   .app-container.medium aside { display: none; } */
