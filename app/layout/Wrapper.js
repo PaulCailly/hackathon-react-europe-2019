@@ -5,7 +5,7 @@ import Sidebar from './Sidebar';
 import Content from './Content';
 
 /* We need data from our context at this layer so that we can toggle the sidenav */
-import { AppContext } from "./AppContext";
+import { AppContext } from "../AppContext";
 
 /* Application Wide Styles */
 import 'bootstrap-4-grid/css/grid.min.css';

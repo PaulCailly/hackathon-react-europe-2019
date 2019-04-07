@@ -1,46 +1,159 @@
 body {
-  background-color: #1B2634;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  background: rgb(255,255,255);
+}
+p, span, h1, h2, h3, h4, h5, h6 {
+  color: #222;
 }
 
-p, h1, h2, h3 {
-  color: #efefef;
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* App Flexbox Conatiner and Items */
-.app-container {
-  font-family: 'Lato', sans-serif;
-  color:rgb(33, 37, 41);
-  display: flex;
-}
-.view { width: 100%; }
-
-/* How can we clean this up more */
-.sidenav, .sidenav.show {
-  min-width: 150px;
+html, body {
   height: 100vh;
-  background-color: #ddd;
 }
-.sidenav.hide { display: none; }
 
-.view {
+/* Flex For Sidebar and Content Area */
+.wrapper {
   display: flex;
+  overflow-x: hidden;
+}
+
+.wrapper aside {
+  position: absolute;
+  width: 150px;
+}
+.wrapper main {
+  flex: 1;
+  min-height: 100vh; /* so main always takes up at least the view height */
+  background: #fff;
+  box-shadow: 0 0 5px #000;
+  transform: translateX(0);
+  transition: transform .3s;
+}
+.wrapper.sm.closed main, 
+.wrapper.md.closed main, 
+.wrapper.md.open main {
+  transform: translateX(0px);
+}
+.wrapper.sm.open main {
+  transform: translateX(150px);
+}
+
+main {
   flex-direction: column;
 }
-main { padding: 1em; }
-
-/* Top Navigation */
-header {
+main header {
+  background-color: #FFF;
+  height: 78px;
   display: flex;
-  padding: 1em;
-  background: rgba(255, 255, 255, 0.85);
-  color: rgb(33, 37, 41);
-  border-bottom: 1px solid rgb(82, 99, 121); /* #526379 */
-  font-size: 18px;
-  height: 1em;
+  flex-direction: row;
 }
-.logo { width: 30%; }
+main section {
+  background-color: #F8F9FA;
+  color: #222;
+}
+
+.wrapper.sm .topnav li.menu { display: auto; }
+.wrapper.md .topnav li.menu { display: none; }
+
+.wrapper.sm .topnav li.link { display: none; }
+.wrapper.md .topnav li.link { display: auto; }
+
+/* Home Header flex containted in the center */
+.home-header-container {
+  background-image: url(images/app/homepage-image.jpg);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;           /* establish flex container */
+  flex-direction: column;  /* make main axis vertical */
+  justify-content: center; /* center items vertically, in this case */
+  align-items: center;     /* center items horizontally, in this case */
+  height: 442px;
+}
+
+.header-centered {
+  width: 70%;
+  color: #fff;
+  margin-top: -4.5em;
+}
+.header-centered h1 {
+  margin-bottom: 0.25em;
+}
+
+.tx-search-sm span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 0.75rem;
+  background-color: #fff;
+  color: #495057;
+  height: 56px;
+  width: 100%;
+  border-radius: 0;
+  border-width: 0;
+}
+
+/* swap between basic and advanced search */
+.wrapper.sm .tx-search-sm { display: auto; }
+.wrapper.md .tx-search-sm { display: none; }
+
+.wrapper.sm .tx-search-md { display: none; }
+.wrapper.md .tx-search-md { display: auto; }
+
+.masonry-grid {
+  margin: 2em;
+}
 
 /* Utility Styles */
+h1 {
+  margin: 0;
+  text-shadow: 0 0 60px black;
+  font-size: 1.5em;
+  font-weight: 400;
+  line-height: 1.2;
+  color: inherit;
+}
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.5em;
+    font-weight: 500;
+  }
+}
+
+.content-description {
+  padding: 2em;
+}
+
+h3.title {
+  font-size: 2.5em;
+  font-weight: 400;
+  display: inline-block;
+  position: relative;
+}
+h3.title:before{
+  content: "";
+  position: absolute;
+  left: 40%; width: 20%;
+  bottom: -0.5em; height: 2px;
+  border-bottom: 2px solid #ea0058;
+}
+
+h3.title + p {
+  margin-top: 3em;
+  margin-bottom: -1em; /* Create less space below these paragraphs */
+}
+
+.text-center { text-align: center; }
+.text-muted { color: #677480; }
+.text-italic { font-style: italic; }
+
 button {
   cursor: pointer;
   margin-right: 0.25em;
@@ -54,6 +167,7 @@ button:hover {
   background-color: rgba(83, 210, 250, 0.5); /* #53d2fa */
   color: rgb(8, 44, 54); /* #082c36 */
 }
+
 .hoverable {
   cursor: pointer; cursor: hand;
   -webkit-transition: opacity 0.15s ease-in-out;

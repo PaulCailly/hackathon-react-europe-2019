@@ -2,6 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'normalize.css';
 
-import Application from './Application';
+import App from './App';
 
-ReactDOM.render(<Application />, document.getElementById("tripXpert"))
+ReactDOM.render(<App />, document.getElementById("tripXpert"))

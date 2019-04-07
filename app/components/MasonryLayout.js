@@ -14,12 +14,15 @@ const MasonryLayout = props => {
   for (let i = 0; i < props.children.length; i++) {
     const columnIndex = i % props.columns;
     columnWrapper[`column${columnIndex}`].push(
-      <div key={`tile-${i}`} style={{ marginBottom: `${props.gap}px`, backgroundColor: '#fff' }}>
+      <div key={`tile-${i}`} style={{
+          marginBottom: `${props.gap}px`, backgroundColor: '#fff'
+        }}>
         {props.children[i]}
       </div>
     );
   }
 
+  // create individual tiles
   for (let i = 0; i < props.columns; i++) {
     result.push(
       <div key={`col-${i}`} 

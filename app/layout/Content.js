@@ -2,9 +2,9 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 /* View Components */
-import Home from './Home';
-import Destinations from './Destinations';
-import Contact from './Contact';
+import Home from '../components/Home';
+import Destinations from '../components/Destinations';
+import Contact from '../components/Contact';
 import TopNav from './Topnav';
 
 const Content = () => {

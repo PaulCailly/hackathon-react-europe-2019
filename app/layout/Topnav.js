@@ -1,5 +1,5 @@
 import React from 'react';
-import Menu from './Menu';
+import Menu from '../components/Menu';
 import './Topnav.css';
 
 const TopNav = () => {
