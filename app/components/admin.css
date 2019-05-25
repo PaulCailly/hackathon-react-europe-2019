@@ -1,0 +1,41 @@
+.tab {
+  width: 90vw;
+}
+
+.formWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardWrapper {
+  width: 500px;
+  padding: 0 30px;
+}
+
+.formContainer {
+  display: flex;
+  justify-content: center;
+  height: calc(100vh - 78px - 65px);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+
+.form > * + * {
+  margin-top: 20px;
+}
+
+.form input {
+  width: 500px;
+}
+
+.form > div > span {
+  width: 500px;
+}
+
+.form > div > span > span {
+  width: 500px;
+}

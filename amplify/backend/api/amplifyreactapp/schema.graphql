@@ -1,0 +1,9 @@
+type Offer @model {
+  id: ID!
+  img: String!
+  name: String!
+  description: String!
+  price: Float!
+  link: String!
+  featured: Boolean!
+}

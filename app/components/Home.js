@@ -1,23 +1,44 @@
-import React from 'react';
-import MasonryLayout from './MasonryLayout';
-import { useMedia } from 'react-use-media';
+import React, { useEffect, useState } from "react";
+import MasonryLayout from "./MasonryLayout";
+import { useMedia } from "react-use-media";
 
 /* KendoReact Components and CSS */
-import { AutoComplete } from '@progress/kendo-react-dropdowns';
-import { Button } from '@progress/kendo-react-buttons';
+import { AutoComplete } from "@progress/kendo-react-dropdowns";
+import { Button } from "@progress/kendo-react-buttons";
+
+import { API, graphqlOperation } from "aws-amplify";
+
+import { listOffers } from "./../../src/graphql/queries";
+
+import "./home.css";
+import Card from "./Card";
 
 const Home = () => {
+  const [offers, updateOffers] = useState([]);
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  async function getData() {
+    try {
+      const offerData = await API.graphql(graphqlOperation(listOffers));
+      updateOffers(offerData.data.listOffers.items);
+    } catch (err) {
+      console.log("error fetching data..", err);
+    }
+  }
+
   document.title = `TripXpert Home`;
   const isMd = useMedia("(min-width: 768px)") ? true : false;
-  const offerOptions = [ "All", "Special", "Regular" ];
-  const priceOptions = [ "$0 to $999", "$1000 to $1999", "$2000 to $2999" ];
-  const destinations = [ "Barcelona", "United States", "Malta", "Italy" ];
+  const offerOptions = ["All", "Special", "Regular"];
+  const priceOptions = ["$0 to $999", "$1000 to $1999", "$2000 to $2999"];
+  const destinations = ["Barcelona", "United States", "Malta", "Italy"];
 
   return (
     <>
       <div className="home-header-container">
         <div className="header-centered">
-
           <h1>Find the best destinations all around the world</h1>
 
           <div className="tx-search-sm">
@@ -40,23 +61,34 @@ const Home = () => {
               </div>
             </div>
           </div>
-
         </div>
       </div>
 
       <div className="content-description text-center">
-        <h3 className="title">Tripxpert Recomends</h3>
-        <p className="text-muted text-italic">Explore top destinations and attractions</p>
+        <h3 className="title">Tripxpert Recommends</h3>
+        <p className="text-muted text-italic">
+          Explore top destinations and attractions
+        </p>
       </div>
       <div className="masonry-grid">
         <MasonryLayout columns={isMd ? 3 : 2} gap={isMd ? 32 : 24}>
-          {[...Array(6).keys()].map(
-            (key) => <div key={`${key}`} style={{height: `200px`}} />
-          )}
+          {offers
+            .filter(offer => offer.featured)
+            .map((offer, index) => (
+              <Card
+                key={offer.id}
+                id={offer.id}
+                img={offer.img}
+                name={offer.name}
+                description={offer.description}
+                price={offer.price}
+                link={offer.link}
+              />
+            ))}
         </MasonryLayout>
       </div>
     </>
-  )
-}
+  );
+};
 
 export default Home;
