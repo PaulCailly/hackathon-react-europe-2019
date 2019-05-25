@@ -127,7 +127,7 @@ const Destination = ({ location, name, description, price, img }) => {
                   <TabStripTab title={<div>Attraction</div>}>
                     <div className="tab">x</div>
                   </TabStripTab>
-                  <TabStripTab title={<div>Enquery Form</div>}>
+                  <TabStripTab title={<div>Inquery Form</div>}>
                     <div className="tab">x</div>
                   </TabStripTab>
                 </TabStrip>
