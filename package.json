@@ -38,7 +38,7 @@
     "@progress/kendo-theme-bootstrap": "^3.2.3",
     "aws-amplify": "^1.1.28",
     "aws-amplify-react": "^2.3.8",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "bootstrap-4-grid": "^2.4.1",
     "formik": "^1.5.7",
     "leaflet": "^1.5.1",
